@@ -425,7 +425,7 @@ function App() {
       scenarioUsed = 'Only 2nd cursor moved - using (2nd cursor * 25%) * multiplier';
     }
     
-    const step3Contribution = (step3Value * 0.25) * step3Multiplier;
+    const step3Contribution = step3Value * step3Multiplier;
     const subtotal = step1Contribution + step3Contribution;
     const finalAmount = Math.round(subtotal + (subtotal * 0.30)); // Add 30% bonus and round
     
@@ -1177,6 +1177,13 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
     window.location.href = mailtoLink;
   };
 
+  // Simple contact function for express menu - opens blank email
+  const openBlankContact = () => {
+    pauseAllVideos(); // Stop any playing videos
+    const mailtoLink = `mailto:hippolyte.burtin@performance2002.com`;
+    window.location.href = mailtoLink;
+  };
+
   // Simple navigation function that works from any page
   const navigateToPage = (targetPage: 'main' | 'apropos' | 'roulette' | 'video') => {
     console.log('navigateToPage called with:', targetPage);
@@ -1612,14 +1619,14 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
         {showVideoPage ? (
           /* Video Page */
           <div className="absolute inset-0 w-full h-full" style={{ backgroundColor: '#0D1B2A' }}>
-            {/* Video Player - same size as film full.png */}
-            <div className="h-screen flex items-center justify-center relative">
-              <div className="relative w-1/2 h-1/2">
+            {/* Video Player - responsive design */}
+            <div className="h-screen flex items-center justify-center relative px-4 md:px-8">
+              <div className="relative w-full max-w-3xl h-auto aspect-video max-h-[60vh]">
                 {showVideoPlayer ? (
                   /* Video Player */
                   <div className="relative w-full h-full">
                     <video 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain rounded-lg"
                       controls
                       autoPlay
                       loop
@@ -1640,11 +1647,11 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
                   </div>
                 ) : (
                   /* Film Full Image */
-                  <div className="cursor-pointer" onClick={() => setShowVideoPlayer(true)}>
+                  <div className="cursor-pointer w-full h-full flex items-center justify-center" onClick={() => setShowVideoPlayer(true)}>
                     <img 
                       src="/video/film.png" 
                       alt="Video Place" 
-                      className={`w-full h-full object-contain hover:opacity-80 transition-all duration-1000 ease-out ${
+                      className={`w-full h-auto max-h-full object-contain hover:opacity-80 transition-all duration-1000 ease-out ${
                         filmImageSlideIn 
                           ? 'translate-x-0 opacity-100' 
                           : 'translate-x-full opacity-0'
@@ -2197,13 +2204,13 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
           </div>
           
           {/* Video Place Section - now part of the main scroll */}
-          <div className="h-screen flex items-center justify-center relative" data-section="film" style={{ backgroundColor: '#0D1B2A' }}>
-            <div className="relative w-3/4 h-3/4 md:w-1/2 md:h-1/2">
+          <div className="h-screen flex items-center justify-center relative px-4 md:px-8" data-section="film" style={{ backgroundColor: '#0D1B2A' }}>
+            <div className="relative w-full max-w-3xl h-auto aspect-video max-h-[60vh]">
               {showVideoPlayer ? (
                 /* Video Player */
-                <div className="relative">
+                <div className="relative w-full h-full">
                   <video 
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain rounded-lg"
                     controls
                     autoPlay
                     loop
@@ -2227,7 +2234,7 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
                   <img 
                     src="/video/film.png" 
                     alt="Video Place" 
-                    className={`w-full h-full object-contain hover:opacity-80 transition-all duration-1000 ease-out ${
+                    className={`w-full h-auto max-h-full object-contain hover:opacity-80 transition-all duration-1000 ease-out ${
                       visibleSections.film 
                         ? 'translate-x-0 opacity-100' 
                         : '-translate-x-full opacity-0'
@@ -4756,7 +4763,7 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
               </div>
               
               {/* Contact button at bottom */}
-              <div className="relative self-end cursor-pointer" onClick={openMailClient}>
+              <div className="relative self-end cursor-pointer" onClick={openBlankContact}>
                 <img 
                   src="/contact/bloc CTA.png" 
                   alt="Button Background" 
