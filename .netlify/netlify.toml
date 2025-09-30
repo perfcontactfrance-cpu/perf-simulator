@@ -1,0 +1,30 @@
+plugins = []
+functionsDirectory = "C:\\Users\\sandr\\Desktop\\Code\\PERF\\project-bolt-sb1-j7haclmd\\project\\netlify\\functions"
+functionsDirectoryOrigin = "config-v1"
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\Users\\sandr\\Desktop\\Code\\PERF\\project-bolt-sb1-j7haclmd\\project\\dist"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+functions = "C:\\Users\\sandr\\Desktop\\Code\\PERF\\project-bolt-sb1-j7haclmd\\project\\netlify\\functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]

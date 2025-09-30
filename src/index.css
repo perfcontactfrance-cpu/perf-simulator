@@ -1,0 +1,531 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes slide-up-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) translateY(100%) scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(50%) translateY(50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1);
+  }
+}
+
+.animate-slide-up-right {
+  animation: slide-up-right 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-bounce-in-left {
+  animation: slideInLeft 0.4s ease-out forwards;
+}
+
+/* Custom slider styling */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+}
+
+/* Custom scrollbar styling - PERF Brand Colors */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #FFC300 #0D1B2A;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #0D1B2A;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 195, 0, 0.1);
+  box-shadow: inset 0 0 4px rgba(255, 195, 0, 0.05);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FFC300 0%, #F59E0B 100%);
+  border-radius: 4px;
+  border: 1px solid rgba(13, 27, 42, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #F59E0B 0%, #D97706 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  border-color: rgba(13, 27, 42, 0.5);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #D97706 0%, #B45309 100%);
+  transform: scale(0.98);
+}
+
+/* Hide main body scrollbar and prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Additional mobile-specific horizontal scroll prevention */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    overscroll-behavior-y: none; /* Prevent bounce/overscroll on mobile */
+  }
+  
+  html {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+    overscroll-behavior-y: none; /* Prevent bounce/overscroll on mobile */
+  }
+  
+  #root {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+  }
+  
+  .scrollbar-thin {
+    overscroll-behavior-y: none !important; /* Prevent overscroll in scroll containers */
+  }
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Solutions page animations */
+@keyframes popFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-pop-from-left {
+  animation: popFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-fill-mode: both;
+}
+
+@keyframes typewriterIcons {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+.animate-typewriter-icons {
+  animation: typewriterIcons 1.2s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+@keyframes delayedFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-delayed-fade-in {
+  animation: delayedFadeIn 0.6s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-from-right {
+  animation: slideFromRight 0.8s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+/* Roulette drag styles */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+/* Prevent unwanted selection highlighting on slider */
+.slider-track, .slider-track * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure no yellow/golden selection colors */
+.slider-track::selection,
+.slider-track *::selection {
+  background: transparent;
+}
+
+.slider-track::-moz-selection,
+.slider-track *::-moz-selection {
+  background: transparent;
+}
+
+/* Slider cursor always on top */
+.slider-cursor {
+  z-index: 999999 !important;
+  position: relative !important;
+  pointer-events: auto !important;
+}
+
+/* Simulator flip card animations - Real flip with normal back side */
+.flip-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flip-card.flipped {
+  animation: flipCard 1s ease-in-out forwards;
+}
+
+@keyframes flipCard {
+  0% {
+    transform: perspective(1000px) rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: perspective(1000px) rotateY(-45deg) scale(0.95);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(-90deg) scale(0.9);
+  }
+  75% {
+    transform: perspective(1000px) rotateY(-135deg) scale(0.95);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(-180deg) scale(1);
+  }
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front {
+  background-color: transparent;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s ease-out;
+}
+
+.flip-card-back {
+  background-color: transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in;
+  transition-delay: 0.4s;
+}
+
+.flip-card.flipped .flip-card-front {
+  opacity: 0;
+  pointer-events: none;
+  transition-delay: 0s;
+}
+
+.flip-card.flipped .flip-card-back {
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0.4s;
+  transform: scaleX(-1);
+}
+
+/* Simulator step flip transition animations */
+.step-flip-container {
+  perspective: 800px;
+  width: 100%;
+  height: 100%;
+}
+
+.step-flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+}
+
+.step-flip-card.step-flipping {
+  transform: rotateY(180deg);
+}
+
+.step-flip-front,
+.step-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-flip-front {
+  background-color: transparent;
+}
+
+.step-flip-back {
+  background-color: transparent;
+  transform: rotateY(180deg);
+}
+
+/* Unified slide animations for all step transitions */
+@keyframes stepSlideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes stepSlideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes stepSlideOutToLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.95);
+  }
+}
+
+@keyframes stepSlideOutToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+}
+
+/* Transition classes */
+.step-slide-enter-right {
+  animation: stepSlideInFromRight 0.4s ease-out forwards;
+}
+
+.step-slide-enter-left {
+  animation: stepSlideInFromLeft 0.4s ease-out forwards;
+}
+
+.step-slide-exit-left {
+  animation: stepSlideOutToLeft 0.25s ease-in forwards;
+}
+
+.step-slide-exit-right {
+  animation: stepSlideOutToRight 0.25s ease-in forwards;
+}
+
+/* Gains rolling animation */
+@keyframes rollNumbers {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  50% {
+    transform: translateY(0) scale(1.1);
+  }
+  75% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.gains-rolling {
+  animation: rollNumbers 0.1s ease-in-out infinite;
+}
+
+.gains-final {
+  animation: none;
+  transform: scale(1.1);
+  transition: transform 0.5s ease-out;
+}
+
+/* Button pop animations */
+@keyframes buttonPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  50% {
+    transform: scale(1.1) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.button-pop-enter {
+  animation: buttonPop 0.6s ease-out forwards;
+}
+
+.button-hidden {
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+}
+

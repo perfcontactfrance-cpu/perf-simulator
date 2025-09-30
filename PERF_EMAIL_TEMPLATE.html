@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats Simulation PERF</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f5;">
+    <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 2px solid #FFC300; border-radius: 8px; overflow: hidden;">
+        
+        <!-- Header -->
+        <div style="background-color: #0D1B2A; padding: 30px 20px; text-align: center; color: white;">
+            <h1 style="margin: 0; font-size: 28px; font-weight: bold; color: #FFC300;">
+                🎯 Résultats de Simulation PERF
+            </h1>
+            <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.8;">
+                Votre analyse personnalisée est prête
+            </p>
+        </div>
+
+        <!-- Main Content -->
+        <div style="padding: 30px 20px;">
+            
+            <!-- Greeting -->
+            <div style="margin-bottom: 25px;">
+                <p style="font-size: 16px; color: #333; margin: 0;">
+                    Bonjour,
+                </p>
+                <p style="font-size: 16px; color: #333; margin: 10px 0 0 0;">
+                    Merci d'avoir utilisé notre simulateur PERF. Voici vos résultats personnalisés :
+                </p>
+            </div>
+
+            <!-- Results Section -->
+            <div style="background-color: #0D1B2A; border: 2px solid #FFC300; border-radius: 8px; padding: 25px; margin-bottom: 25px; text-align: center;">
+                <div style="font-size: 18px; color: #FFC300; font-weight: bold; margin-bottom: 10px;">
+                    💰 GAINS POTENTIELS CALCULÉS
+                </div>
+                <div style="font-size: 36px; color: #FFC300; font-weight: bold; margin: 15px 0;">
+                    {{gains_amount}}€
+                </div>
+                <div style="font-size: 14px; color: #cccccc;">
+                    Économies annuelles estimées
+                </div>
+            </div>
+
+            <!-- Simulation Data -->
+            <div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
+                <h3 style="color: #0D1B2A; font-size: 18px; margin: 0 0 15px 0; border-bottom: 2px solid #FFC300; padding-bottom: 8px;">
+                    📈 Données de votre simulation
+                </h3>
+                
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 10px 0; font-weight: bold; color: #0D1B2A;">Volume (Étape 1):</td>
+                        <td style="padding: 10px 0; text-align: right; color: #333;">{{step1_volume}}K€</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 10px 0; font-weight: bold; color: #0D1B2A;">Chiffre d'affaires (Étape 1):</td>
+                        <td style="padding: 10px 0; text-align: right; color: #333;">{{step1_revenue}}K€</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 10px 0; font-weight: bold; color: #0D1B2A;">Valeur Étape 3:</td>
+                        <td style="padding: 10px 0; text-align: right; color: #333;">{{step3_value}}K€</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; font-weight: bold; color: #0D1B2A;">Valeur Étape 4:</td>
+                        <td style="padding: 10px 0; text-align: right; color: #333;">{{step4_value}}K€</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Manufacturers Section -->
+            <div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
+                <h3 style="color: #0D1B2A; font-size: 18px; margin: 0 0 15px 0; border-bottom: 2px solid #FFC300; padding-bottom: 8px;">
+                    🏭 Manufacturiers sélectionnés
+                </h3>
+                <div style="background-color: white; padding: 15px; border-radius: 6px; border-left: 4px solid #FFC300;">
+                    <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.5;">
+                        {{manufacturers}}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Date -->
+            <div style="text-align: center; color: #666; font-size: 14px; margin-bottom: 25px;">
+                📅 Simulation réalisée le {{date}}
+            </div>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; margin: 30px 0;">
+                <div style="background-color: #0D1B2A; border: 2px solid #FFC300; border-radius: 8px; padding: 20px;">
+                    <p style="color: white; font-size: 16px; margin: 0 0 15px 0;">
+                        Intéressé par ces résultats ?
+                    </p>
+                    <p style="color: #FFC300; font-size: 14px; margin: 0;">
+                        Contactez notre équipe pour une analyse détaillée et personnalisée
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div style="background-color: #0D1B2A; padding: 20px; text-align: center; border-top: 2px solid #FFC300;">
+            <p style="color: #FFC300; font-size: 16px; font-weight: bold; margin: 0 0 5px 0;">
+                Merci d'avoir utilisé le simulateur PERF !
+            </p>
+            <p style="color: #cccccc; font-size: 14px; margin: 0;">
+                L'équipe PERF - Votre partenaire pour l'optimisation
+            </p>
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #333;">
+                <p style="color: #888; font-size: 12px; margin: 0;">
+                    Cet email a été envoyé à {{user_email}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
