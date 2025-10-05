@@ -1520,7 +1520,7 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
             <img 
               src="/assets/header/logoPERF header.png" 
               alt="PERF Logo" 
-              className="h-[28px] cursor-pointer hover:opacity-80 transition-opacity"
+              className="h-[24px] md:h-[28px] cursor-pointer hover:opacity-80 transition-opacity"
                 onClick={() => {
                  // Navigate directly to main page, bypassing intro GIF
                  console.log('PERF logo clicked - navigating to main page');
