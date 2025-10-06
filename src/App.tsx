@@ -1589,14 +1589,24 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
               className="h-[8px] md:h-[10px]"
             />
             {/* Mobile: Red square button */}
-            <div className="md:hidden">
-              <div className="w-6 h-6 bg-red-600 flex items-center justify-center rounded-sm">
+            <a 
+              href="https://app.performance2002.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="md:hidden"
+            >
+              <div className="w-6 h-6 bg-red-600 flex items-center justify-center rounded-sm cursor-pointer hover:opacity-80 transition-opacity">
                 <span className="text-white font-normal text-sm font-montserrat">A</span>
               </div>
-            </div>
+            </a>
             
             {/* Desktop: Original button */}
-            <div className="hidden md:block relative">
+            <a 
+              href="https://app.performance2002.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden md:block relative cursor-pointer hover:opacity-80 transition-opacity"
+            >
               <img 
                 src="/assets/header/cta adherent.png" 
                 alt="Button Background" 
@@ -1607,7 +1617,7 @@ réalisée le ${new Date().toLocaleDateString('fr-FR')}
                 alt="ADHÉRENT" 
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[12px]"
               />
-            </div>
+            </a>
           </div>
         </div>
         {/* Yellow separator line */}
